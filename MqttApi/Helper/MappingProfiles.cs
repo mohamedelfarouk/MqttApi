@@ -9,6 +9,9 @@ namespace MqttApi.Helper
         {
             CreateMap<Client, ClientDto>();
             CreateMap<ClientDto, Client>();
+
+            CreateMap<Topic, TopicDto>();
+            CreateMap<TopicDto, Topic>();
         }
     }
 }

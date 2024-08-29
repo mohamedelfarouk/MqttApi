@@ -25,6 +25,8 @@ namespace MqttApi
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddScoped<IClientRepository, ClientRepository>();
+            builder.Services.AddScoped<ITopicRepository, TopicRepository>();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
