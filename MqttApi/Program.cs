@@ -3,6 +3,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MqttApi.Mqtt;
 using Microsoft.Extensions.Configuration;
+using MqttApi.Interfaces;
+using MqttApi.Repository;
 
 namespace MqttApi
 {

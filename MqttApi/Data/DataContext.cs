@@ -9,5 +9,6 @@ namespace MqttApi.Data
 
         }
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Topic> Topics { get; set; }
     }
 }

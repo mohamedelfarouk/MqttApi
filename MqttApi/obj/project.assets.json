@@ -5799,19 +5799,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\seife\\.nuget\\packages\\": {}
+    "C:\\Users\\Mohamed\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\seife\\OneDrive\\Desktop\\MqttApi\\MqttApi\\MqttApi\\MqttApi.csproj",
+      "projectUniqueName": "C:\\Users\\Mohamed\\source\\repos\\MqttApi\\MqttApi\\MqttApi.csproj",
       "projectName": "MqttApi",
-      "projectPath": "C:\\Users\\seife\\OneDrive\\Desktop\\MqttApi\\MqttApi\\MqttApi\\MqttApi.csproj",
-      "packagesPath": "C:\\Users\\seife\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\seife\\OneDrive\\Desktop\\MqttApi\\MqttApi\\MqttApi\\obj\\",
+      "projectPath": "C:\\Users\\Mohamed\\source\\repos\\MqttApi\\MqttApi\\MqttApi.csproj",
+      "packagesPath": "C:\\Users\\Mohamed\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mohamed\\source\\repos\\MqttApi\\MqttApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\seife\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5819,6 +5819,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
