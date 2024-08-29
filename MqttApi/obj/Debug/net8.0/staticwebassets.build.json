@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "wj6lFnGcJGnRfI6tSJjCDuhdoSYrJRbkg5hs5UutREU=",
+  "Source": "MqttApi",
+  "BasePath": "_content/MqttApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
