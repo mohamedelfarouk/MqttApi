@@ -16,7 +16,7 @@ namespace MqttApi.Mqtt
         public string From { get; set; }
 
         [JsonProperty("To")]
-        public string To { get; set; }
+        public string? To { get; set; }
 
         [JsonProperty("MessageBody")]
         public string MessageBody { get; set; }

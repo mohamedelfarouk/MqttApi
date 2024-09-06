@@ -5,6 +5,7 @@ C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\MqttApi.deps.json
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\MqttApi.runtimeconfig.json
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\MqttApi.dll
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\MqttApi.pdb
+C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\Humanizer.dll
@@ -33,6 +34,7 @@ C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\Microsoft.SqlServ
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\MQTTnet.dll
+C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -121,6 +123,7 @@ C:\Users\Mohamed\source\repos\MqttApi\MqttApi\obj\Debug\net8.0\MqttApi.AssemblyI
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\obj\Debug\net8.0\MqttApi.csproj.CoreCompileInputs.cache
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\obj\Debug\net8.0\MqttApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\obj\Debug\net8.0\MqttApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Mohamed\source\repos\MqttApi\MqttApi\obj\Debug\net8.0\MqttApi.sourcelink.json
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\obj\Debug\net8.0\staticwebassets\msbuild.MqttApi.Microsoft.AspNetCore.StaticWebAssets.props
@@ -135,5 +138,3 @@ C:\Users\Mohamed\source\repos\MqttApi\MqttApi\obj\Debug\net8.0\refint\MqttApi.dl
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\obj\Debug\net8.0\MqttApi.pdb
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\obj\Debug\net8.0\MqttApi.genruntimeconfig.cache
 C:\Users\Mohamed\source\repos\MqttApi\MqttApi\obj\Debug\net8.0\ref\MqttApi.dll
-C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\AutoMapper.dll
-C:\Users\Mohamed\source\repos\MqttApi\MqttApi\bin\Debug\net8.0\Newtonsoft.Json.dll

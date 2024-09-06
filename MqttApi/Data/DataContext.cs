@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MqttApi.Models;
+using MqttApi.Mqtt;
 namespace MqttApi.Data
 {
     public class DataContext : DbContext
@@ -10,5 +11,6 @@ namespace MqttApi.Data
         }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Topic> Topics { get; set; }
+        public DbSet<Message> MqttMessages { get; set; }
     }
 }

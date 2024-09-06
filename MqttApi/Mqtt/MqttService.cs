@@ -1,4 +1,7 @@
-﻿using MQTTnet;
+﻿using MqttApi.Interfaces;
+using MqttApi.Models;
+using MqttApi.Repository;
+using MQTTnet;
 using MQTTnet.Client;
 using MQTTnet.Server;
 using System;
@@ -13,32 +16,73 @@ namespace MqttApi.Mqtt
         private readonly IMqttClient _mqttClient;
         private readonly ILogger<MqttService> _logger;
         private readonly IConfiguration _configuration;
-        private readonly Action<string, string> _onMessageReceived;
-        
-        public MqttService(ILogger<MqttService> logger,IConfiguration configuration)
+        private readonly IServiceProvider _serviceProvider;
+
+        public MqttService(
+        ILogger<MqttService> logger,
+        IConfiguration configuration,
+        IServiceProvider serviceProvider)
         {
             _logger = logger;
             _configuration = configuration;
+            _serviceProvider = serviceProvider;
 
             var mqttSettings = _configuration.GetSection("MQTT").Get<MqttSettings>();
 
             var factory = new MqttFactory();
             _mqttClient = factory.CreateMqttClient();
 
-            // Set up the connection options
             var options = new MqttClientOptionsBuilder()
-                .WithClientId(mqttSettings?.ClientId) // Replace with you ID
-                .WithTcpServer(mqttSettings?.Host, mqttSettings?.Port) // Replace with your MQTT broker address and port
+                .WithClientId(mqttSettings?.ClientId)
+                .WithTcpServer(mqttSettings?.Host, mqttSettings?.Port)
                 .WithCleanSession()
                 .Build();
 
             _mqttClient.ConnectAsync(options).Wait();
 
+            // Message received handler
             _mqttClient.ApplicationMessageReceivedAsync += async e =>
             {
+                var scope = _serviceProvider.CreateScope();
+                var _topicRepository = scope.ServiceProvider.GetRequiredService<ITopicRepository>();
+                var _clientRepository = scope.ServiceProvider.GetRequiredService<IClientRepository>();
+                var _messageRepository = scope.ServiceProvider.GetRequiredService<IMessageRepository>();
+
+
                 var payload = Encoding.UTF8.GetString(e.ApplicationMessage.PayloadSegment);
                 _logger.LogInformation($"Received message: {payload} from topic: {e.ApplicationMessage.Topic}");
-                _onMessageReceived?.Invoke(e.ApplicationMessage.Topic, payload);
+
+                // Deserialize the message using the existing method
+                var messageData = Message.FromJson(payload);
+
+                // Handle the topic
+                var topic = _topicRepository.GetTopicByName(messageData.Topic);
+                if (topic == null)
+                {
+                    topic = new Topic { Name = messageData.Topic };
+                    _topicRepository.AddTopic(topic);
+                    _topicRepository.Save();
+                }
+
+                // Handle the client (message sender)
+                var client = _clientRepository.GetClientByName(messageData.From);
+                if (client == null)
+                {
+                    client = new Client { Name = messageData.From };
+                    _clientRepository.AddClient(client);
+                    _clientRepository.Save();
+                }
+
+                // Save the message
+                var mqttMessage = new Message
+                {
+                    MessageBody = messageData.MessageBody,
+                    From = messageData.From,
+                    Topic = messageData.Topic,
+                };
+                _messageRepository.AddMessage(mqttMessage);
+                _messageRepository.Save();
+
                 await Task.CompletedTask;
             };
         }

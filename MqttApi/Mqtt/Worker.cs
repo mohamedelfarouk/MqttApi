@@ -32,9 +32,9 @@ namespace MqttApi.Mqtt
             Console.WriteLine($"[Dynamic] Message received on topic {topic}: {message}");
         }
 
-        protected async Task StartAsync()
+        protected async Task StartAsync(String topic)
         {
-            // connect
+            _mqttService.Subscribe(topic);
         }
 
 
@@ -42,26 +42,26 @@ namespace MqttApi.Mqtt
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             // Subscribe to a topic, providing the message handler callback
-            _mqttService.Subscribe("my/topic");
+            StartAsync("my/topic");
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+                //_logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
                 // Publish a message to the topic every second
-                _mqttService.Publish("my/topic", "Hello, MQTT!");
+                //_mqttService.Publish("my/topic", "Hello, MQTT!");
 
-                _mqttService.Unsubscribe("my/topic");
+                //StopAsync("my/topic");
 
-                _logger.LogInformation("Finished subscribing, publishing, and unsubscribing.");
+                //_logger.LogInformation("Finished subscribing, publishing, and unsubscribing.");
 
                 await Task.Delay(1000, stoppingToken);
             }
         }
 
-        protected async Task StopAsync()
+        protected async Task StopAsync(String topic)
         {
-            // undubscribe & disconnect
+            _mqttService.Unsubscribe(topic);
         }
     }
 }

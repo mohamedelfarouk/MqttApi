@@ -5,7 +5,9 @@ namespace MqttApi.Interfaces
     public interface ITopicRepository
     {
         ICollection<Topic> GetTopics();
-        Client GetTopic(long id);
-        Client GetTopicByName(string name);
+        Topic GetTopic(long id);
+        Topic GetTopicByName(string name);
+        void AddTopic(Topic topic);
+        bool Save();
     }
 }
